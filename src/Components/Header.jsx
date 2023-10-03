@@ -10,7 +10,7 @@ const Header = () => {
         <div className='flex flex-col justify-center items-center my-6 space-y-2'>
             <img className='w-[350px]' src={logo} alt="" />
             <p className='text-[#706F6F]'>Journalism Without Fear or Favour</p>
-            <h4>{formattedDate}</h4>
+            <h4 className='text-[#403F3F] text-lg font-semibold'>{formattedDate}</h4>
         </div>
     );
 };
