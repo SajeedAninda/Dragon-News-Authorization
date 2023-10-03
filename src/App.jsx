@@ -1,13 +1,12 @@
-import Header from './Components/Header'
-import Navbar from './Components/Navbar'
+import Home from './Components/Home'
 
 function App() {
 
   return (
     <>
       <div className='w-[90%] mx-auto'>
-      <Header></Header>
-      <Navbar></Navbar>
+      <Home></Home>
+      
       </div>
     </>
   )
