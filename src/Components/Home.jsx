@@ -10,7 +10,7 @@ const Home = () => {
         <div>
             <Header></Header>
             <Navbar></Navbar>
-            <div className='grid grid-cols-4 space-y-10'>
+            <div className='grid grid-cols-1 lg:grid-cols-4 space-y-10'>
                 <LeftSideTab></LeftSideTab>
                 <CenterTab></CenterTab>
                 <RightSideTab></RightSideTab>
