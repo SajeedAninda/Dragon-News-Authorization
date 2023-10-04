@@ -14,7 +14,7 @@ const Register = () => {
         register(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                navigate("/");
+                navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
             });
