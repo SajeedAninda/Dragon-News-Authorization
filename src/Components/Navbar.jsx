@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {Link, NavLink } from 'react-router-dom';
 import Marquee from "react-fast-marquee";
 import { FaUserCircle } from 'react-icons/fa';
 
@@ -47,7 +47,7 @@ const Navbar = () => {
 
                 <div className="user flex gap-2">
                     <FaUserCircle className='text-[40px]'></FaUserCircle>
-                    <button className='px-4 py-2 bg-[#403F3F] text-white font-bold'>Login</button>
+                    <Link to={"/login"}><button className='px-4 py-2 bg-[#403F3F] text-white font-bold'>Login</button></Link>
                 </div>
             </div>
 

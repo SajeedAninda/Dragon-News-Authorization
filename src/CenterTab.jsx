@@ -22,8 +22,8 @@ const CenterTab = () => {
         <div className='col-span-2'>
             <h2 className='text-xl font-bold text-center'>Dragon News Home</h2>
             {
-                news.slice(0, show ? news.length : 3).map(singleNews =>
-                    <div className='mx-8 my-6'>
+                news.slice(0, show ? news.length : 3).map((singleNews,idx) =>
+                    <div key={idx} className='mx-8 my-6'>
                         <div className='flex justify-between items-center py-4 px-4 bg-gray-100'>
                             <div className='flex gap-2'>
                                 <img className='rounded-full w-[40px] h-[40px]' src={singleNews.author.img} alt="" />
@@ -48,7 +48,7 @@ const CenterTab = () => {
                                         <>
                                             {singleNews.details.slice(0, 200)}
                                             <span>.....</span>
-                                            <Link className='text-[#FF8C47]'>Read More</Link>
+                                            <Link to={`newsCategory/${singleNews._id}`} className='text-[#FF8C47] font-bold'>Read More</Link>
                                         </>
                                     )
                                 }
