@@ -25,11 +25,11 @@ const Navbar = () => {
                 </Marquee>
             </div>
 
-            <div className='flex justify-between items-center py-4'>
+            <div className='flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center py-4'>
                 <div className=''>
 
                 </div>
-                <div className="links flex gap-6 ml-28">
+                <div className="links flex gap-6 ml-0 md:ml-28">
                     <NavLink
                         to="/"
                         className={({ isActive, isPending }) =>
