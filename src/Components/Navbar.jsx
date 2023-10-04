@@ -8,13 +8,12 @@ import { AuthContext } from '../Authentication/AuthProvider';
 
 const Navbar = () => {
     let { loggedUser, logout } = useContext(AuthContext);
-    console.log(loggedUser);
     let handleLogout = () => {
         logout()
             .then(() => {
-                // Sign-out successful.
+                console.log("Signed Out Succesfully");
             }).catch((error) => {
-                // An error happened.
+                console.log(error);
             });
     }
 

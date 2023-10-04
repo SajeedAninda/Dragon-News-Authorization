@@ -21,7 +21,7 @@ const Register = () => {
     }
 
     return (
-        <div className='bg-gray-100 h-screen'>
+        <div className='bg-gray-100 h-full'>
             <div className='w-[90%] mx-auto'>
                 <Navbar></Navbar>
                 <div className='flex justify-center h-[50%] items-center'>

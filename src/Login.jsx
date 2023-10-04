@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import Navbar from './Components/Navbar';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from './Authentication/AuthProvider';
+import SocialLogin from './SocialLogin';
 
 const Login = () => {
     let [errormsg, seterrormsg] = useState("");
@@ -24,7 +25,7 @@ const Login = () => {
 
 
     return (
-        <div className='bg-gray-100 h-screen'>
+        <div className='bg-gray-100 h-fit'>
             <div className='w-[90%] mx-auto'>
                 <Navbar></Navbar>
                 <div className='flex justify-center h-[50%] items-center'>
@@ -52,6 +53,9 @@ const Login = () => {
                             <div className='flex justify-center'>
                                 <h2 className='text-[#403F3F] mt-4'>Dont't have an account? <Link className='text-[#F75B5F] font-semibold' to={"/register"}>Register</Link></h2>
                             </div>
+                       <div className='flex justify-center pt-3 items-center'>
+                       <SocialLogin></SocialLogin>
+                       </div>
                         </div>
                     </div>
                 </div>
