@@ -18,7 +18,7 @@ const NewsDetails = () => {
     return (
         <div className='w-[90%] mx-auto'>
             <Header></Header>
-            <div className='grid grid-cols-3 gap-6'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                 <div className='col-span-2'>
                     <h2 className='text-xl font-bold text-center'>Dragon News</h2>
                     <div className='border rounded-lg border-gray-100 p-6 space-y-3'>
