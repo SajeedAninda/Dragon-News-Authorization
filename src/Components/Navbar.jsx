@@ -1,11 +1,23 @@
-import React from 'react';
-import {Link, NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import Marquee from "react-fast-marquee";
 import { FaUserCircle } from 'react-icons/fa';
+import { AuthContext } from '../Authentication/AuthProvider';
 
 
 
 const Navbar = () => {
+    let { loggedUser, logout } = useContext(AuthContext);
+    console.log(loggedUser);
+    let handleLogout = () => {
+        logout()
+            .then(() => {
+                // Sign-out successful.
+            }).catch((error) => {
+                // An error happened.
+            });
+    }
+
     return (
         <div>
             <div className='p-4 rounded-lg bg-gray-100'>
@@ -46,9 +58,28 @@ const Navbar = () => {
                 </div>
 
                 <div className="user flex gap-2">
-                    <FaUserCircle className='text-[40px]'></FaUserCircle>
-                    <Link to={"/login"}><button className='px-4 py-2 bg-[#403F3F] text-white font-bold'>Login</button></Link>
+                    {
+                        loggedUser ? <img className='w-[40px] rounded-full' src={loggedUser?.photoURL}></img> : <FaUserCircle className='text-[40px]' />
+                    }
+
+                    {
+                        loggedUser ?
+                            (
+                                <button onClick={handleLogout} className='px-4 py-2 bg-[#403F3F] text-white font-bold'>
+                                    Log Out
+                                </button>
+                            )
+                            :
+                            (
+                                <Link to="/login">
+                                    <button className='px-4 py-2 bg-[#403F3F] text-white font-bold'>
+                                        Login
+                                    </button>
+                                </Link>
+                            )
+                    }
                 </div>
+
             </div>
 
         </div>
