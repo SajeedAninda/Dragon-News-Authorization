@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BiLogoGoogle } from 'react-icons/bi';
 import { AiFillGithub } from 'react-icons/ai';
 import { SiFacebook } from 'react-icons/si';
@@ -8,18 +8,42 @@ import img1 from "../src/assets/qZone1.png"
 import img2 from "../src/assets/qZone2.png"
 import img3 from "../src/assets/qZone3.png"
 import './right.css';
-
+import { AuthContext } from './Authentication/AuthProvider';
 
 const RightSideTab = () => {
+    let { googleLogin } = useContext(AuthContext);
+    let { githubLogin } = useContext(AuthContext);
+
+    let handleGoogleLogin = () => {
+        googleLogin()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            }).catch((error) => {
+                console.log(error);
+            });
+
+    }
+
+    let handleGithubLogin = () => {
+        githubLogin()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            }).catch((error) => {
+                console.log(error);
+            });
+    }
+
     return (
         <div>
             <div className='space-y-2'>
                 <h2 className='text-lg font-bold'>Login With</h2>
-                <div className='p-2 w-full flex items-center border-2 font-semibold border-blue-400 text-blue-500 gap-2 rounded-xl'>
+                <div onClick={handleGoogleLogin} className='p-2 w-full flex items-center border-2 cursor-pointer font-semibold border-blue-400 text-blue-500 gap-2 rounded-xl'>
                     <BiLogoGoogle className='text-lg'></BiLogoGoogle>
                     <p>Login With Google</p>
                 </div>
-                <div className='p-2 w-full flex items-center border-2 font-semibold border-gray-700 text-gray-700 gap-2 rounded-xl'>
+                <div onClick={handleGithubLogin} className='p-2 w-full flex items-center border-2 cursor-pointer font-semibold border-gray-700 text-gray-700 gap-2 rounded-xl'>
                     <AiFillGithub className='text-lg'></AiFillGithub>
                     <p>Login With Github</p>
                 </div>

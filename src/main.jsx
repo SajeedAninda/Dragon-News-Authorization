@@ -9,31 +9,34 @@ import {
 import NewsDetails from './NewsDetails.jsx';
 import Login from './Login.jsx';
 import Register from './Register.jsx';
+import AuthProvider from './Authentication/AuthProvider.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-  }, 
+  },
   {
     path: "newsCategory/:id",
-    loader: ()=>fetch("/news.json"),
+    loader: () => fetch("/news.json"),
     element: <NewsDetails></NewsDetails>,
   },
   {
     path: "/login",
     element: <Login></Login>,
-  }, 
+  },
   {
     path: "/register",
     element: <Register></Register>,
-  }, 
+  },
 
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
