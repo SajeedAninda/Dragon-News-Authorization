@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import Navbar from './Components/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from './Authentication/AuthProvider';
 
 const Register = () => {
-    let {register} = useContext(AuthContext);
+    let { register } = useContext(AuthContext);
+    let navigate = useNavigate();
 
     let handleRegister = (e) => {
         e.preventDefault();
@@ -13,10 +14,9 @@ const Register = () => {
         register(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user);
+                navigate("/");
             })
             .catch((error) => {
-                console.log(error);
             });
     }
 
@@ -35,11 +35,11 @@ const Register = () => {
                                 </div>
                                 <div className='flex flex-col gap-2 justify-center items-center'>
                                     <label className='text-[#403F3F] text-lg font-bold' id='email'>Email Address</label>
-                                    <input className='bg-gray-100 px-4 py-2 w-1/2 rounded-lg' type="email" name="email" id="email" placeholder='Enter Your Email Address' />
+                                    <input className='bg-gray-100 px-4 py-2 w-1/2 rounded-lg' type="email" required name="email" id="email" placeholder='Enter Your Email Address' />
                                 </div>
                                 <div className='flex flex-col gap-2 justify-center items-center'>
                                     <label className='text-[#403F3F] text-lg font-bold' l id='password'>Password</label>
-                                    <input className='bg-gray-100 px-4 py-2 w-1/2 rounded-lg' type="password" name="password" id="password" placeholder='Enter Your Password' />
+                                    <input className='bg-gray-100 px-4 py-2 w-1/2 rounded-lg' type="password" required name="password" id="password" placeholder='Enter Your Password' />
                                 </div>
                                 <div className='flex justify-center'>
                                     <button className='bg-[#403F3F] text-white font-bold rounded-lg py-3 w-1/2' type='submit'>
