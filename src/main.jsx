@@ -11,12 +11,14 @@ import Login from './Login.jsx';
 import Register from './Register.jsx';
 import AuthProvider from './Authentication/AuthProvider.jsx';
 import PrivateRoute from './Components/PrivateRoute.jsx';
+import ErrorPage from '../ErrorPage.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage> 
   },
   {
     path: "newsCategory/:id",
