@@ -10,7 +10,7 @@ Dragon News is a modern and feature-rich news portal web application built with 
 
 ## Demo
 
-**Check out the live demo of Dragon News: (https://dragon-news-auth-sajeed.netlify.app/register)
+**Check out the live demo of Dragon News: (https://dragon-news-auth-sajeed.netlify.app/)
 
 ## Features
 
