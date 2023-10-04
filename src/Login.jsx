@@ -30,20 +30,20 @@ const Login = () => {
             <div className='w-[90%] mx-auto'>
                 <Navbar></Navbar>
                 <div className='flex justify-center h-[50%] items-center'>
-                    <div className='bg-white w-2/3 space-y-5 px-20 py-20 rounded-md'>
+                    <div className='bg-white w-[80%] md:w-2/3 space-y-5 px-4 py-4 lg:px-20 lg:py-20 rounded-md'>
                         <h1 className='text-[#403F3F] text-3xl font-bold text-center'>Login to your Account</h1>
                         <div>
                             <form onSubmit={handleLogin} className=' space-y-6'>
                                 <div className='flex flex-col gap-2 justify-center items-center'>
                                     <label className='text-[#403F3F] text-lg font-bold' id='email'>Email Address</label>
-                                    <input className='bg-gray-100 px-4 py-2 w-1/2 rounded-lg' type="email" name="email" required id="email" placeholder='Enter Your Email Address' />
+                                    <input className='bg-gray-100 px-4 py-2 w-full md:w-2/3 lg:1/2 rounded-lg' type="email" name="email" required id="email" placeholder='Enter Your Email Address' />
                                 </div>
                                 <div className='flex flex-col gap-2 justify-center items-center'>
                                     <label className='text-[#403F3F] text-lg font-bold' l id='email'>Password</label>
-                                    <input className='bg-gray-100 px-4 py-2 w-1/2 rounded-lg' type="password" name="password" required id="password" placeholder='Enter Your Password' />
+                                    <input className='bg-gray-100 px-4 py-2 w-full md:w-2/3 lg:1/2 rounded-lg' type="password" name="password" required id="password" placeholder='Enter Your Password' />
                                 </div>
                                 <div className='flex justify-center'>
-                                    <button className='bg-[#403F3F] text-white font-bold rounded-lg py-3 w-1/2' type='submit'>
+                                    <button className='bg-[#403F3F] text-white font-bold rounded-lg py-3 w-full md:w-2/3 lg:1/2' type='submit'>
                                         Login
                                     </button>
                                 </div>
